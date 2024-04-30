@@ -1,0 +1,13 @@
+{%extends 'layout/app-layout.html'%}
+{%block 'content' %}
+<div class="container bg-light shadow-md p-5">
+<h1>Search Results</h1>
+
+{% for product_list in results %}
+<p>Name:{{ product_list.name }}</p><br>
+   <p>Description:{{ product_list.description }}</p><br>
+   <p>Price:{{ product_list.price }}</p>
+</div> 
+{% endfor %}
+{%endblock%}
+

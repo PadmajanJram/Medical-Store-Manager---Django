@@ -1,0 +1,20 @@
+{%extends 'layout/app-layout.html' %}
+{%block 'content' %}
+<body>
+<h1>Create Product</h1>
+<div class="container bg-light shadow-md p-5">
+<form action='' method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary"> 
+                    
+        Create &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+    </button>&nbsp; 
+    <a href="{% url 'retrieveproduct' %}" class="btn btn-secondary"> 
+        Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </a>
+
+</form> 
+</div>
+</body>
+{%endblock%}

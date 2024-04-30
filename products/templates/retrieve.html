@@ -1,0 +1,28 @@
+
+{%extends 'layout/app-layout.html'%}
+{%block 'content' %}
+
+    <h1 style="font-family: serif"; text-align: "center"; >MEDICINES</h1>
+    
+<h5> Welcome, {{user}}! 👋 </h5>
+
+
+<a class="btn btn-outline-primary btn-sm" href="{% url 'createproduct' %}"> Create a new medicine record. &nbsp; <i class="fa fa-plus-circle" ></i>
+</a>
+
+<table class="table table-hover table-bordered">
+    <tr><th>Product_id</th>
+        <th>Product_name</th>
+        <th>Product_price</th>
+        <th colspan="2">Actions</th></tr>
+        
+    {%for products in product_list%}
+    <tr>
+    <td>{{products.id}}</td>
+    <td>{{ products.name }} </td> 
+    <td>{{ products.price }}</td>
+    <td ><a href="{%url 'updateproduct' products.id %}" class="btn btn-success" value="edit" type="submit">Edit</a></td>
+    <td><a href="{%url 'deleteproduct' products.id %}" class="btn btn-success" value="edit" type="submit">Delete</a></td></tr>
+       {% endfor %}
+    </table>
+{%endblock%}

@@ -1,0 +1,17 @@
+{% extends 'layout/app-layout.html' %}
+{% block 'content' %}
+<div class="container bg-light shadow-md p-5">
+    <h1>Update Product</h1>  
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-info">    
+                Update record &nbsp; <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>&nbsp; 
+            <a href="{% url 'retrieveproduct' %}" class="btn btn-secondary"> 
+                Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+
+        </form>
+    </div>
+{% endblock %}
